@@ -1,6 +1,3 @@
-import { Analytics } from '@vercel/analytics/react';
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const burgerMenu = document.getElementById('burger-menu');
     const navLinks = document.getElementById('nav-links');
