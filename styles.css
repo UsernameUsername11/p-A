@@ -1,0 +1,308 @@
+@font-face {
+    font-family: 'Hansen';
+    src: url('HansenGrotesque-Medium-Trial.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Goof';
+    src: url('Brookeshappell8-eoKB.ttf') format('truetype');
+    font-display: swap;
+}
+
+body {
+    font-family: 'Hansen', 'Goof', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    scroll-behavior: smooth;
+    cursor: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+footer {
+    background-color: #e59500a7;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    font-family: 'Sft', Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+header {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+#nav-links li {
+    margin: 0 20px;
+}
+
+#nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.2s ease-out;
+}
+
+#nav-links a:hover {
+    color: #FFA500;
+    font-size: 1.1em;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 7px 14px;
+    border-radius: 50px;
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#burger-menu {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.panel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    scroll-snap-align: start;
+}
+
+#panel-1 {
+    background: none;
+}
+
+#panel-2 {
+    background-image: url('bled.webp');
+}
+
+#panel-3 {
+    background-image: url('Jezero.webp');
+}
+
+#panel-4 {
+    background-image: url('culture.webp');
+}
+
+.panel video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transform: scale(1);
+    transition: transform 30s linear;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.panel-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 80%;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.5s ease-out;
+    transform: translateY(20px);
+}
+
+.panel-text.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card {
+    padding: 20px;
+    margin: 50px auto 20px;
+    max-width: 80%;
+    background: rgba(255, 255, 255, 0.030);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+#main-title {
+    background-clip: text;
+    font-size: 7rem;
+    background: linear-gradient(45deg, #FF4500, #FFD700, #FF4500, #FFD700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.panel h1:not(#main-title) {
+    background-image: linear-gradient(to right, #FF4500, #FFD700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+a {
+    color: rgba(0, 40, 183, 0.757);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(0, 40, 183);
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1;
+    margin: 0 1em;
+    text-align: center;
+}
+
+/* Glassy Button */
+.glassy-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.glassy-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.source-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+@media (max-width: 768px) {
+    #burger-menu {
+        display: block;
+        position: fixed;
+        top: 0.3em;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+    }
+
+    #nav-links {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        text-align: center;
+        align-items: center;
+        transition: height 0.5s ease-in-out;
+    }
+
+    #nav-links.open {
+        height: 100vh;
+    }
+
+    #nav-links li {
+        margin: 20px 0;
+    }
+
+    #main-title {
+        font-size: 4rem;
+    }
+
+    #nav-links a {
+        color: black;
+    }
+
+    #nav-links a:hover {
+        color: #FFA500;
+    }
+}
+
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+.article-content h1 {
+    text-align: center;
+    background-clip: text;
+    font-size: 2em;
+    background: linear-gradient(45deg, #FF4500, #FFD700, #FF4500, #FFD700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
